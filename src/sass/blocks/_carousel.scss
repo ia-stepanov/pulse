@@ -1,9 +1,12 @@
 .carousel {
-  padding: 81px 0;
+  padding: 80px 40px;
   &__inner {
     position: relative;
-    width: 750px;
+    max-width: 750px;
     margin: 0 auto;
+    img {
+      width: 100%;
+    }
   }
   .slick-prev,
   .slick-next {
@@ -16,10 +19,40 @@
     img {
       width: 31px;
       height: 50px;
+      transition: filter 0.2s ease;
+      &:hover {
+        filter: $brightness;
+      }
     }
   }
   .slick-next {
     left: auto;
     right: -66px;
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin-top: 15px;
+    button {
+      margin: 10px;
+      width: 60px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: $main-color;
+      border: none;
+      outline: none;
+      font-size: 0;
+      transition: background 0.2s ease;
+      &:hover {
+        filter: $brightness;
+        // background: #980101;
+      }
+    }
+    li[class='slick-active'] button {
+      background: #bc000c;
+      // background: #980101;
+    }
   }
 }
