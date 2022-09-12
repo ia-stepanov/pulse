@@ -1,6 +1,7 @@
 .footer {
   height: 630px;
   position: relative;
+  line-height: 0; 
   &__info {
     position: absolute;
     top: 0;
@@ -30,6 +31,7 @@
     transition: filter 0.2s ease;
     &:hover {
       color: #fff;
+      text-decoration: none;
       filter: $brightness;
     }
   }
@@ -55,6 +57,10 @@
     justify-content: center;
     align-items: center;
   }
+}
+
+iframe {
+  max-height: 100%;
 }
 
 @media (max-width: 445px) {
