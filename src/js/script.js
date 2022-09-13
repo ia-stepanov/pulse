@@ -80,7 +80,7 @@ $(document).ready(function () {
       messages: {
         name: {
           required: 'Пожалуйста, введите имя',
-          minlength: jQuery.validator.format('Введите более {0} символов!'),
+          minlength: jQuery.validator.format('Введите не менее {0} символов!'),
         },
         phone: 'Пожалуйста, введите номер телефона',
         email: {
@@ -106,11 +106,10 @@ $(document).ready(function () {
     }).done(function () {
       $(this).find('input').val('');
       $('#consultation, #order').fadeOut();
-      $('.overlay, #thanks').fadeIn('slow');
+      $('.overlay, #thanks').fadeIn('fast');
 
       $('form').trigger('reset');
     });
     return false;
   });
 });
- 
