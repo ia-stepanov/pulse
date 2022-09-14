@@ -33,6 +33,14 @@
       }
     }
   }
+  &__icon {
+    &_animated {
+      animation: heartbeat 2s ease infinite;
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
