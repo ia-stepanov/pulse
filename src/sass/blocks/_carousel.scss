@@ -47,12 +47,10 @@
       transition: background 0.2s ease;
       &:hover {
         filter: $brightness;
-        // background: #980101;
       }
     }
     li[class='slick-active'] button {
       background: #bc000c;
-      // background: #980101;
     }
   }
 }
