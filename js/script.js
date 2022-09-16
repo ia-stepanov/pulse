@@ -10,7 +10,7 @@ $(document).ready(function () {
     nextArrow:
       '<button type="button" class="slick-next"><img src="icons/right.svg"></button>',
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 910,
@@ -101,7 +101,7 @@ $(document).ready(function () {
     e.preventDefault();
     $.ajax({
       type: 'POST',
-      url: 'mailer/smart.php',
+      url: 'mailer/index.php',
       data: $(this).serialize(),
     }).done(function () {
       $(this).find('input').val('');
@@ -112,4 +112,22 @@ $(document).ready(function () {
     });
     return false;
   });
+
+  // Smooth scroll and pageup
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 1600) {
+      $('.pageup').fadeIn();
+    } else {
+      $('.pageup').fadeOut();
+    }
+  });
+
+  $("a[href=#up]").click(function () {
+    const _href = $(this).attr('href');
+    $('html, body').animate({ scrollTop: $(_href).offset().top + 'px' });
+    return false;
+  });
+
+  new WOW().init();
 });
